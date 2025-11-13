@@ -1,0 +1,128 @@
+:root {
+  --primary: #ffcc00;
+  --secondary: #333;
+  --muted: #666;
+  --gradient: linear-gradient(270deg, #ffcc00, #ff9900, #ffcc00);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: var(--secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-links a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.nav-call {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: var(--gradient);
+  border-radius: 8px;
+  animation: gradient 3s ease infinite;
+  text-decoration: none;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-call-icon {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+/* Hero */
+.hero {
+  padding: 3rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Booking */
+.booking-card {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  background: var(--primary);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-message {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: green;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+  background: #f5f5f5;
+  text-align: center;
+}
