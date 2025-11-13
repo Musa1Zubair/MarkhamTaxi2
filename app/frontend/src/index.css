@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === One Dark Inspired Theme === */
+@layer base {
+    :root {
+        --background: 220 13% 10%; /* nearly black */
+        --foreground: 0 0% 95%; /* bright text */
+        --card: 220 13% 12%;
+        --card-foreground: 0 0% 95%;
+        --popover: 220 13% 12%;
+        --popover-foreground: 0 0% 95%;
+
+        --primary: 220 100% 70%; /* blue accent */
+        --primary-foreground: 220 20% 10%;
+        --secondary: 280 100% 70%; /* purple accent */
+        --secondary-foreground: 0 0% 95%;
+
+        --muted: 220 10% 25%;
+        --muted-foreground: 220 10% 75%;
+        --accent: 160 100% 40%; /* cyan accent */
+        --accent-foreground: 0 0% 95%;
+        --destructive: 0 70% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 220 13% 18%;
+        --input: 220 13% 18%;
+        --ring: 200 100% 70%;
+
+        --chart-1: 220 80% 65%;
+        --chart-2: 160 80% 50%;
+        --chart-3: 40 100% 60%;
+        --chart-4: 280 75% 65%;
+        --chart-5: 340 75% 65%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 220 13% 6%; /* true deep background */
+        --foreground: 0 0% 98%;
+        --card: 220 13% 8%;
+        --card-foreground: 0 0% 98%;
+        --popover: 220 13% 8%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 220 100% 70%;
+        --primary-foreground: 220 20% 10%;
+        --secondary: 280 100% 70%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 220 10% 20%;
+        --muted-foreground: 220 10% 75%;
+        --accent: 160 100% 40%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 70% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 13% 18%;
+        --input: 220 13% 18%;
+        --ring: 200 100% 70%;
+        --chart-1: 220 80% 65%;
+        --chart-2: 160 80% 50%;
+        --chart-3: 40 100% 60%;
+        --chart-4: 280 75% 65%;
+        --chart-5: 340 75% 65%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Debug wrapper rules (unchanged) */
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin: inherit;
+        padding: inherit;
+        gap: inherit;
+        border-width: inherit;
+        border-style: inherit;
+        border-color: inherit;
+    }
+}
