@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Markham Taxi | Reliable Local Taxi Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Markham Taxi - fast, safe, and reliable taxi service in Markham. Call (416) 566-8154 for pickups, airport rides, and local trips.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #f6b700;
+      --primary-dark: #d89f00;
+      --dark: #111827;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --light-bg: #f9fafb;
+      --white: #ffffff;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.15);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --transition: 0.23s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, #fff7db 0, #ffffff 50%, #f3f4ff 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #fff7cc 0, #f6b700 40%, #f59e0b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.25);
+    }
+
+    .brand-logo span {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-text .title {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .brand-text .subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 18px;
+    }
+
+    .nav-call {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: #0f172a;
+      color: white;
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.45);
+    }
+
+    .nav-call small {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.8;
+    }
+
+    .nav-call strong {
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .nav-call-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3.2rem 0 3.8rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
+      gap: 2.8rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(250, 204, 21, 0.12);
+      color: #92400e;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.9rem;
+      color: #020617;
+    }
+
+    .hero h1 span.highlight {
+      background: linear-gradient(135deg, var(--primary), #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 0.99rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .chip {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 0.78rem;
+      color: #4b5563;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .chip-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(251, 191, 36, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #111827;
+      box-shadow: 0 18px 35px rgba(245, 158, 11, 0.5);
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+      box-shadow: 0 24px 45px rgba(245, 158, 11, 0.65);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #111827;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background: #e5e7eb;
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: #111827;
+    }
+
+    /* Hero Graphic */
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.5rem;
+      background: radial-gradient(circle at top left, #fef9c3 0, #f97316 40%, #111827 100%);
+      color: white;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.9), transparent 70%);
+      top: -60px;
+      right: -40px;
+      opacity: 0.6;
+      filter: blur(2px);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .hero-card-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(248, 250, 252, 0.18);
+    }
+
+    .taxi-graphic {
+      margin-top: 0.3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .taxi-car {
+      position: relative;
+      background: #facc15;
+      border-radius: 18px;
+      padding: 0.9rem 0.9rem 0.65rem;
+      max-width: 260px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.55);
+    }
+
+    .taxi-top {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 58px;
+      height: 18px;
+      border-radius: 999px 999px 6px 6px;
+      background: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #facc15;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .taxi-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.7rem;
+    }
+
+    .taxi-window {
+      flex: 1.3;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f9fafb, #dbeafe);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .taxi-window::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.14), transparent 45%, rgba(250, 250, 250, 0.5) 70%);
+    }
+
+    .taxi-checker {
+      flex: 1;
+      height: 20px;
+      border-radius: 8px;
+      background-image:
+        linear-gradient(90deg, #111827 0 25%, transparent 25% 50%, #111827 50% 75%, transparent 75% 100%);
+      background-size: 24px 100%;
+      background-position: 2px 0;
+    }
+
+    .taxi-wheels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.4rem;
+      padding: 0 0.5rem;
+    }
+
+    .wheel {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #020617;
+      border: 3px solid #111827;
+      box-shadow: 0 4px 0 rgba(15, 23, 42, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wheel-inner {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #e5e7eb;
+    }
+
+    .road {
+      margin-top: 0.7rem;
+      height: 26px;
+      border-radius: 999px;
+      background-image:
+        linear-gradient(0deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)),
+        linear-gradient(90deg, transparent 0 16px, #e5e7eb 16px 26px);
+      background-size: 100% 100%, 42px 2px;
+      background-repeat: no-repeat;
+      background-position: center, center;
+    }
+
+    .hero-card-footer {
+      margin-top: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-card-footer strong {
+      font-size: 0.95rem;
+    }
+
+    .hero-card-footer small {
+      opacity: 0.8;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.75rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: rgba(249, 250, 251, 0.9);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #020617;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 34rem;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.2rem 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background: rgba(250, 204, 21, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .card small {
+      font-size: 0.78rem;
+      color: #4b5563;
+    }
+
+    /* Booking / Contact */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .info-label {
+      font-weight: 600;
+      min-width: 80px;
+      color: #111827;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      color: #4b5563;
+      margin-top: 0.6rem;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .booking-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .booking-card h3 {
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+    }
+
+    .booking-card p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #374151;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .field {
+      position: relative;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.55rem 0.9rem;
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      background: #f9fafb;
+      transition: border-color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    textarea {
+      border-radius: 18px;
+      min-height: 72px;
+      resize: vertical;
+      padding-top: 0.55rem;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary-dark);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.7);
+      transform: translateY(-0.5px);
+    }
+
+    .helper-text {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+    }
+
+    .inline-fields {
+      display: grid;
+      gap: 0.6rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .btn-submit {
+      margin-top: 0.2rem;
+      width: 100%;
+      border-radius: 999px;
+      border: none;
+      padding: 0.65rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.6);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      background: #020617;
+      box-shadow: 0 22px 38px rgba(15, 23, 42, 0.85);
+    }
+
+    .form-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      text-align: center;
+    }
+
+    #form-message {
+      margin-top: 0.6rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    #form-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+
+    #form-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 1.6rem 0 1.8rem;
+      background: #020617;
+      color: #9ca3af;
+      font-size: 0.78rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .footer-brand span {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    .footer-call {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .footer-call a {
+      color: #facc15;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        margin-top: 0.6rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-secondary {
+        justify-content: center;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        padding-inline: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <div class="brand-logo" aria-hidden="true">
+        <span>MT</span>
+      </div>
+      <div class="brand-text">
+        <div class="title">Markham Taxi</div>
+        <div class="subtitle">Fast • Safe • Local</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#rates">Rates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="nav-call" href="tel:+14165668154">
+      <div>
+        <small>Book a ride</small><br>
+        <strong>(416) 566-8154</strong>
+      </div>
+      <div class="nav-call-icon" aria-hidden="true">📞</div>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          <span>Open 24/7 • Markham & GTA</span>
+        </div>
+        <h1>
+          Your <span class="highlight">reliable ride</span><br>
+          in and around Markham.
+        </h1>
+        <p class="hero-lead">
+          Markham Taxi offers safe, on-time pickups for local trips, airport transfers,
+          and anywhere in the Greater Toronto Area. One call and your car is on the way.
+        </p>
+
+        <div class="hero-badges">
+          <div class="chip">
+            <div class="chip-icon">⏱️</div>
+            <span>Fast response times</span>
+          </div>
+          <div class="chip">
+            <div class="chip-icon">🧾</div>
+            <span>Upfront, flat rates available</span>
+          </div>
+          <div class="chip">
+            <div class="chip-icon">🛡️</div>
+            <span>Professional, licensed drivers</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:+14165668154">
+            Call now &nbsp;•&nbsp; (416) 566-8154
+          </a>
+          <a class="btn-secondary" href="#contact">
+            Book online
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <p class="hero-meta">
+          <strong>Serving:</strong> Markham • Richmond Hill • Scarborough • North York • GTA
+        </p>
+      </div>
+
+      <div class="hero-card" aria-label="Markham Taxi booking preview">
+        <div class="hero-card-header">
+          <div>
+            <div class="hero-card-title">Next taxi in minutes</div>
+            <small>Typical pickup time within Markham</small>
+          </div>
+          <span class="hero-card-tag">On-duty • 24/7</span>
+        </div>
+
+        <div class="taxi-graphic" aria-hidden="true">
+          <div class="taxi-car">
+            <div class="taxi-top">TAXI</div>
+            <div class="taxi-body">
+              <div class="taxi-window"></div>
+              <div class="taxi-checker"></div>
+            </div>
+            <div class="taxi-wheels">
+              <div class="wheel"><div class="wheel-inner"></div></div>
+              <div class="wheel"><div class="wheel-inner"></div></div>
+            </div>
+          </div>
+          <div class="road"></div>
+        </div>
+
+        <div class="hero-card-footer">
+          <div>
+            <strong>Call to confirm your fare</strong><br>
+            <small>Estimate provided by the dispatcher based on your trip.</small>
+          </div>
+          <div>
+            <small>Booking line</small><br>
+            <strong>(416) 566-8154</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Our services</div>
+        <h2 class="section-title">More than just a ride across town.</h2>
+        <p class="section-description">
+          Whether it's a quick trip to the grocery store, a ride to work, or a late-night pickup,
+          Markham Taxi is here to help you get where you need to go—comfortably and on time.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="card">
+          <div class="card-icon">🏙️</div>
+          <h3>Local & City Trips</h3>
+          <p>
+            Safe, punctual rides within Markham and the Greater Toronto Area
+            for errands, appointments, and everyday travel.
+          </p>
+          <small>Point-to-point rides • Flexible routes</small>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">✈️</div>
+          <h3>Airport Transfers</h3>
+          <p>
+            Pre-booked rides to and from Pearson, Billy Bishop, and other nearby airports.
+            We track timing so you arrive stress-free.
+          </p>
+          <small>Ideal for early morning & late-night flights</small>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <h3>Family & Group Rides</h3>
+          <p>
+            Comfortable vehicles for small groups, families, and students.
+            Extra luggage? Let us know when you book.
+          </p>
+          <small>Child seats available on request</small>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🕒</div>
+          <h3>24/7 Service</h3>
+          <p>
+            Day or night, weekend or weekday—Markham Taxi is available whenever you need a ride.
+          </p>
+          <small>Late-night pickups • Early morning commutes</small>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3>Corporate & Regular Clients</h3>
+          <p>
+            Reliable transport for staff, clients, and recurring trips.
+            Ask about repeat bookings and invoicing.
+          </p>
+          <small>Business-friendly, dependable service</small>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧾</div>
+          <h3>Flat Rate Options</h3>
+          <p>
+            For common routes like airport runs, flat rates can be arranged in advance
+            so your fare is clear before you ride.
+          </p>
+          <small>Call to confirm available flat routes</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet & Rates -->
+  <section id="fleet">
+    <div class="container two-column">
+      <div>
+        <div class="section-header">
+          <div class="section-eyebrow">Our fleet</div>
+          <h2 class="section-title">Clean, comfortable, and well-maintained vehicles.</h2>
+          <p class="section-description">
+            Every Markham Taxi vehicle is regularly inspected and kept tidy for your comfort.
+            From solo riders to small groups, we match the car to your trip.
+          </p>
+        </div>
+
+        <ul class="info-list">
+          <li>
+            <span class="info-label">Sedans</span>
+            <span>Ideal for 1–3 passengers with light luggage. Perfect for everyday trips.</span>
+          </li>
+          <li>
+            <span class="info-label">Larger vehicles</span>
+            <span>Roomier options for families, small groups, or extra bags when available.</span>
+          </li>
+          <li>
+            <span class="info-label">Cleanliness</span>
+            <span>Non-smoking vehicles, regularly cleaned interiors, and courteous drivers.</span>
+          </li>
+          <li>
+            <span class="info-label">Safety</span>
+            <span>Licensed, experienced drivers who know Markham and the GTA well.</span>
+          </li>
+        </ul>
+
+        <div id="rates" class="pill">
+          <span class="pill-dot"></span>
+          <span><strong>Rates:</strong> Metered fares & flat rates for popular routes. Call to confirm.</span>
+        </div>
+      </div>
+
+      <!-- Booking / Contact form -->
+      <div id="contact" class="booking-card" aria-label="Online booking form">
+        <h3>Request a booking</h3>
+        <p>
+          Prefer to send details instead of calling? Fill out this form and we'll confirm
+          your ride by phone or text. For urgent trips, please call directly.
+        </p>
+
+        <form id="booking-form">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required>
+          </div>
+
+          <div class="inline-fields">
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="e.g. (416) 555-1234" required>
+              <p class="helper-text">We'll use this to confirm your ride.</p>
+            </div>
+            <div class="field">
+              <label for="date">Pickup date</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+          </div>
+
+          <div class="inline-fields">
+            <div class="field">
+              <label for="time">Pickup time</label>
+              <input id="time" name="time" type="time" required>
+            </div>
+            <div class="field">
+              <label for="passengers">Passengers</label>
+              <select id="passengers" name="passengers">
+                <option value="1">1 passenger</option>
+                <option value="2">2 passengers</option>
+                <option value="3">3 passengers</option>
+                <option value="4">4 passengers</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pickup">Pickup address</label>
+            <input id="pickup" name="pickup" type="text" placeholder="Street address, city" required>
+          </div>
+
+          <div class="field">
+            <label for="dropoff">Drop-off address</label>
+            <input id="dropoff" name="dropoff" type="text" placeholder="Street address, city" required>
+          </div>
+
+          <div class="field">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" name="notes" placeholder="Flight number, gate, buzzer, special requests…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Send booking request
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <div id="form-message"></div>
+
+          <p class="form-note">
+            For immediate pickups, please call
+            <strong><a href="tel:+14165668154">(416) 566-8154</a></strong>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span>Markham Taxi</span>
+      <span>•</span>
+      <span>Serving Markham & GTA</span>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-call">
+      <span>Book your next ride:&nbsp;</span>
+      <a href="tel:+14165668154">(416) 566-8154</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('booking-form');
+  const msgEl = document.getElementById('form-message');
+
+  // Form submission with backend integration
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgEl.className = '';
+    msgEl.textContent = 'Sending...';
+    msgEl.classList.add('error');
+    msgEl.style.display = 'block';
+
+    const data = {
+      name: document.getElementById('name').value,
+      phone: document.getElementById('phone').value,
+      date: document.getElementById('date').value,
+      time: document.getElementById('time').value,
+      passengers: document.getElementById('passengers').value,
+      pickup: document.getElementById('pickup').value,
+      dropoff: document.getElementById('dropoff').value,
+      notes: document.getElementById('notes').value,
+    };
+
+    try {
+      const res = await fetch('/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      let body = null;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        body = await res.json();
+      } else {
+        const text = await res.text();
+        body = text ? JSON.parse(text) : null;
+      }
+
+      if (res.ok && (!body || body.success !== false)) {
+        msgEl.textContent = 'Request sent — we will confirm your ride shortly!';
+        msgEl.className = 'success';
+        form.reset();
+      } else {
+        const errorMsg = body?.error || res.statusText || 'Unknown error';
+        msgEl.textContent = `${errorMsg} — please try again`;
+        msgEl.className = 'error';
+      }
+    } catch (err) {
+      msgEl.textContent = `Network error: ${err.message} — make sure the server is running`;
+      msgEl.className = 'error';
+    }
+  });
+</script>
+
+</body>
+</html>
